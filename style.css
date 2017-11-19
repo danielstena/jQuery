@@ -1,24 +1,28 @@
 body{
-    display: flex;
-    margin:0px;
     padding:0px;
-
 }
 .container{
-    width:100%;
+    max-width:1280px;
+    margin: auto;
 
 }
 .header1{
     background-color: lightgray;
     position: fixed;
-    width: 100%;
+    top:0px;
+    width:1280px;
     height:5em;  
+    border:1px solid black;
+    margin-top:0px;
 }
 .header2{
     background-color: lightgray;
     position: fixed;
-    width: 100%;
+    top:0px;
+    width:1280px;
     height:5em;  
+    border:1px solid black;
+    margin-top:0px;
 }
 .allaiheadern{
     display: flex;
@@ -29,15 +33,19 @@ body{
 .main{
     margin-top:10em;
     text-align: center;
+    min-height: 729px;
+    max-height: 710px;
 
 }
 .footer{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 8em;
-    background-color: green;
+    height: 2em;
+    width:1280px;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    font-size: 1.5em;
+    border:1px solid black;
 }
 .logo{
     height:100%;
@@ -75,4 +83,7 @@ a{
     color:black;
     padding:0px;
     margin:0px;
+}
+.forgott{
+    text-align: center;
 }
