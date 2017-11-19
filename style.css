@@ -33,9 +33,7 @@ body{
 .main{
     margin-top:10em;
     text-align: center;
-    min-height: 729px;
-    max-height: 710px;
-
+    min-height: 500px;
 }
 .footer{
     height: 2em;

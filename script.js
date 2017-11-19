@@ -9,34 +9,34 @@ function attGoraLista(){
 
     var printList = ""
 
-    for(var i = 0; i < deltagare.length; i++) {
-       
+    for(var i = 0; i < deltagare.length; i++) { 
     }
 } 
 
+
 $(document).ready(function(){
+
+    sessionStorage.ourUser = "test"
+    sessionStorage.ourPassword = "password"
     // Kör denna kod när sidan laddas
     var ourUser = "test"
     var ourPassword = "password"
 
-
-    
     $(".welcome").hide();
     $(".forgott").hide();
     $(".header2").hide();
     // Klicka på logga in
     $(".loggaIn").click(function(){
         
-        if (ourUser == $(".userEmail").val() && ourPassword == $(".userPassword").val()) {
-                console.log("user mail is ok");
+        if (sessionStorage.ourUser == $(".userEmail").val() && sessionStorage.ourPassword == $(".userPassword").val()) {
                 // Dölj inlogg Visa hello
                 $(".hejString").append(" Welcome " + $(".userEmail").val() );
+                $(".array").show();
                 $(".header1").hide();
                 $(".header2").show();
                 $(".forgott").hide();
             } else {
                 console.log("fel ifyllt")
-                // Dölj inlogg visa forgotPass
                 $(".loginForm").hide();
                 $(".forgott").show();
                 $(".signout").hide();
@@ -47,7 +47,6 @@ $(document).ready(function(){
         $(".header1").show();
         $(".footer").show();
         $(".hejString").hide();
-
     });
-
 });
+array.append(printList)
