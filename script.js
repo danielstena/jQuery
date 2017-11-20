@@ -1,3 +1,5 @@
+$(document).ready(function(){
+    //Min array
     var attGoraLista = [
         "Städa rummet",
         "Laga mat",
@@ -5,16 +7,14 @@
         "planera morgondagen"
     ]
 
-function attGoraLista(){
-
-    var printList = ""
-
-    for(var i = 0; i < deltagare.length; i++) { 
-    }
-} 
-
-
-$(document).ready(function(){
+    //Min function för min array
+    function attGoraLista(){
+        
+            var printList = ""
+        
+            for(var i = 0; i < deltagare.length; i++) { 
+            }
+        } 
 
     // Kör denna kod när sidan laddas
     var ourUser = "test"
@@ -38,13 +38,12 @@ $(document).ready(function(){
                 
                     if (ourUser == $(".userEmail").val() && ourPassword == $(".userPassword").val()) {
                             // Dölj inlogg Visa hello
-                            sessionStorage.ourUser;
+                            sessionStorage.ourUser = $(".userEmail").val();
                             $(".hejString").append(" Welcome " + $(".userEmail").val() );
                             $(".array").show();
                             $(".header1").hide();
                             $(".header2").show();
                             $(".forgott").hide();
-                            document.getElementById("array").innerHTML = printList;
                         } else {
                             console.log("fel ifyllt")
                             $(".loginForm").hide();
@@ -61,4 +60,4 @@ $(document).ready(function(){
         $(".hejString").hide();
     });
 });
-array.append(printList)
+
