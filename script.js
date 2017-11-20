@@ -9,12 +9,10 @@ $(document).ready(function(){
 
     //Min function för min array
     function attGoraLista(){
-        
-            var printList = ""
-        
-            for(var i = 0; i < deltagare.length; i++) { 
-            }
-        } 
+        for(var i = 0; i < attGoraLista.length; i++) { 
+            document.createElement("ul");
+        }
+    } 
 
     // Kör denna kod när sidan laddas
     var ourUser = "test"
@@ -44,6 +42,7 @@ $(document).ready(function(){
                             $(".header1").hide();
                             $(".header2").show();
                             $(".forgott").hide();
+                            $(".array").append(attGoraLista);
                         } else {
                             console.log("fel ifyllt")
                             $(".loginForm").hide();
@@ -54,10 +53,8 @@ $(document).ready(function(){
     }
 
     $(".signoutLink").click(function(){
-        $(".header2").hide();
-        $(".header1").show();
-        $(".footer").show();
-        $(".hejString").hide();
+        sessionStorage.removeItem("ourUser");
+        location.reload();
     });
 });
 
