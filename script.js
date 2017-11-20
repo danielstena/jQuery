@@ -21,38 +21,38 @@ $(document).ready(function(){
     var ourPassword = "password"
 
     //Detta är den nya koden ner till rad 55:
-    if (sessionStorage.ourUser == $(".userEmail").val())
+    if (sessionStorage.ourUser != null)
     {
-        $(".hejString").append(" Welcome " + $(".userEmail").val() );
+        $(".hejString").append(" Welcome " + sessionStorage.ourUser); 
         $(".array").show();
         $(".header1").hide();
         $(".header2").show();
         $(".forgott").hide();
-    } 
-        else {
+    } else {
 
-    $(".welcome").hide();
-    $(".forgott").hide();
-    $(".header2").hide();
-    // Klicka på logga in
-    $(".loggaIn").click(function(){
-       
-        if (ourUser == $(".userEmail").val() && ourPassword == $(".userPassword").val()) {
-                // Dölj inlogg Visa hello
-                sessionStorage.ourUser;
-                $(".hejString").append(" Welcome " + $(".userEmail").val() );
-                $(".array").show();
-                $(".header1").hide();
-                $(".header2").show();
+                $(".welcome").hide();
                 $(".forgott").hide();
-            } else {
-                console.log("fel ifyllt")
-                $(".loginForm").hide();
-                $(".forgott").show();
-                $(".signout").hide();
-            }
-    });
-}
+                $(".header2").hide();
+                // Klicka på logga in
+                $(".loggaIn").click(function(){
+                
+                    if (ourUser == $(".userEmail").val() && ourPassword == $(".userPassword").val()) {
+                            // Dölj inlogg Visa hello
+                            sessionStorage.ourUser;
+                            $(".hejString").append(" Welcome " + $(".userEmail").val() );
+                            $(".array").show();
+                            $(".header1").hide();
+                            $(".header2").show();
+                            $(".forgott").hide();
+                            document.getElementById("array").innerHTML = printList;
+                        } else {
+                            console.log("fel ifyllt")
+                            $(".loginForm").hide();
+                            $(".forgott").show();
+                            $(".signout").hide();
+                        }
+                });
+    }
 
     $(".signoutLink").click(function(){
         $(".header2").hide();
