@@ -1,10 +1,27 @@
-
-
 $(document).ready(function(){
     //Min array   
     var ourUser = "test"
     var ourPassword = "password"
 
+    var attGoraLista = [
+        "Städa rummet",
+        "Laga mat",
+        "tvätta",
+        "planera morgondagen",
+    ]
+
+    //Min function för min array
+    function skrivautlista(){
+        var arraydiv = document.querySelector(".array");
+        //Det nedanför är samma som lista = <ul> </ul>
+        var ul = document.createElement("ul");
+        for (var i = 0; i < attGoraLista.length; i++){
+            var li = document.createElement("li");
+            li.innerHTML = attGoraLista[i];
+            ul.appendChild(li);
+        }
+        arraydiv.appendChild(ul);
+    }
     if (sessionStorage.ourUser != null){
         inloggad();
     } else {
@@ -22,11 +39,9 @@ $(document).ready(function(){
                         }
             });
         }
-
     $(".logout").click(function(){
         sessionStorage.clear();
         location.reload();
-       
     });
 });
 

@@ -7,18 +7,7 @@ body{
 
 }
 .header{
-    background-color: lightgray;
-    position: fixed;
-    top:0px;
-    width:1280px;
-    height:7.5em;  
-    border:1px solid black;
-    margin-top:0px;
     font-family: 'Anton', sans-serif;
-    display: flex;
-    justify-content: space-between; 
-    height:100%;
-    margin:auto;
 }
 .header2{
     background-color: lightgray;
