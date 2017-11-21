@@ -8,60 +8,38 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="header1">
-            <div class="allaiheadern">
-                <div class="logo">
-                    <a href="index.html">
-                        <h1>
-                            TODO
-                        </h1>
-                    </a>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-secondary">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <a class="logo" href="Index.html">TODO</a>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Kontakt</a>
+                        </li>
+                    </ul>
+                    <!-- login --> 
+                    <div>
+                        <form class="form-inline my-2 my-lg-0 loggaIn">
+                            <input class="form-control mr-sm-2 userEmail" type="search" placeholder="Email" aria-label="toggle navigation">
+                            <input class="form-control mr-sm-2 userPassword" type="password" placeholder="Lösenord" aria-label="toggle navigation">
+                            <button class="btn btn-success my-2 my-sm-0" type="submit">LOGIN</button>
+                        </form>
+                    </div>
+                    <div>
+                            <button class="btn btn-success my-2 my-sm-0 logout" type="submit">LOG OUT</button>
+                    </div>
                 </div>
-
-                <div class="kontakt">
-                    <a href="kontakt.html">
-                        kontakt
-                    </a>
-                </div>
-                
-                <div class="login">
-                    <label>Användarnamn
-                        <input type value="Guest"text class="userEmail">
-                    </label>
-                    <label>Lösenord
-                        <input type="password" value="Guest" text class="userPassword">
-                    </label>
-                    <button class="loggaIn">
-                        logga in
-                    </button>
-                </div>
-            </div>
+              </nav>
         </div>
 
-        <div class="header2">
-            <div class="allaiheadern">
-                <div class="logo">
-                    <a href="index.html">
-                        <h1>
-                            TODO
-                        </h1>
-                    </a>
-                </div>
-
-                <div class="besökare">
-         
-                </div>
-                
-                <div class="signout">
-                    <a href="#" class="signoutLink">
-                        sign out
-                    </a>
-                </div>
-            </div>
-        </div>
 
         <div class="main">
             <div class="hejString">
@@ -74,27 +52,31 @@
                 <p>
                     Forgott passord?
                 </p>
-                <a href="#">
+                <a href="#" style="color:black;" >
                     klicka här
                 </a>
             </div> 
         
         </div>
     
-        
-        <div class="footer">
-            <div class="länk">
-                <a href="http://danielstena.wieg17.se/">
-                    Länk till mitt CV
-                </a>
-            </div>
-            <div class="info">
-                © Daniel Stenå, Östra annebergsvägen 25, 43337 Partille. All rights reserved. 
-            </div>
-            <div>
-                2017-11-18
-            </div>
-        </div>
+        <footer class="container bg-secondary text-light text-center">
+                <div class="row">
+                  <div class="col">
+                        <a href="http://danielstena.wieg17.se/">
+                            Länk till mitt CV
+                        </a>
+            
+                  </div>
+                  <div class="col">
+                        © Daniel Stenå, Östra annebergsvägen 25, 43337 Partille. All rights reserved. 
+                  </div>
+                  <div class="col">
+                    2017-11-20
+                  </div>
+                </div>
+            
+              </footer>
+
     </div>
     <script src="./script.js"></script>
 </body>

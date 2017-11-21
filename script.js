@@ -1,62 +1,78 @@
+
+
 $(document).ready(function(){
-    //Min array
-    var attGoraLista = [
-        "Städa rummet",
-        "Laga mat",
-        "tvätta",
-        "planera morgondagen"
-    ]
-
-    //Min function för min array
-    function attGoraLista(){
-        var listan = document.createElement("ul");
-        for(var i = 0; i < attGoraLista.length; i++) { 
-            var list = document.createElement("li");
-            list.innerText = attGoraLista[i];
-        }
-    } 
-
-    // Kör denna kod när sidan laddas
+    //Min array   
     var ourUser = "test"
     var ourPassword = "password"
 
-    //Detta är den nya koden ner till rad 55:
-    if (sessionStorage.ourUser != null)
-    {
-        $(".hejString").append(" Welcome " + sessionStorage.ourUser); 
-        $(".array").show();
-        $(".header1").hide();
-        $(".header2").show();
-        $(".forgott").hide();
+    if (sessionStorage.ourUser != null){
+        inloggad();
     } else {
-
-            $(".welcome").hide();
-            $(".forgott").hide();
-            $(".header2").hide();
+            start();
             // Klicka på logga in
-            $(".loggaIn").click(function(){
+            $(".loggaIn").submit(function(e){
+                e.preventDefault();
             
                 if (ourUser == $(".userEmail").val() && ourPassword == $(".userPassword").val()) {
-                        // Dölj inlogg Visa hello
+                        // Dölj inlogg Visa welcome + user
                         sessionStorage.ourUser = $(".userEmail").val();
-                        $(".hejString").append(" Welcome " + $(".userEmail").val() );
-                        $(".array").show();
-                        $(".header1").hide();
-                        $(".header2").show();
-                        $(".forgott").hide();
-                        $(".array").append(attGoraLista);
+                        inloggad();
                 } else {
-                        console.log("fel ifyllt")
-                        $(".loginForm").hide();
-                        $(".forgott").show();
-                        $(".signout").hide();
+                        fellosen();
                         }
             });
         }
 
-    $(".signoutLink").click(function(){
-        sessionStorage.removeItem("ourUser");
+    $(".logout").click(function(){
+        sessionStorage.clear();
         location.reload();
+       
     });
 });
 
+
+
+
+function start(){
+    $(".forgott").hide();
+    $(".array").hide();
+    $(".logout").hide();
+}
+function inloggad(){
+    $(".loggaIn").hide();
+    $(".hejString").text("Welcome " + sessionStorage.ourUser);
+    $(".array").show();
+    $(".forgott").hide();
+    $(".logout").show();
+}
+function fellosen(){
+    $(".array").hide();
+    $(".forgott").show();
+}
+
+
+
+/*     var attGoraLista = [
+        "Städa rummet",
+        "Laga mat",
+        "tvätta",
+        "planera morgondagen",
+    ]
+
+    //Min function för min array
+    function skrivautlista(){
+        var arraydiv = document.querySelector(".array");
+        //Det nedanför är samma som lista = <ul> </ul>
+        var ul = document.createElement("ul");
+        for (var i = 0; i < attGoraLista.length; i++){
+            var li = document.createElement("li");
+            li.innerHTML = attGoraLista[i];
+            ul.appendChild(li);
+        }
+        arraydiv.appendChild(ul);
+    }
+
+
+    !!!!OBS TILL INLOGGAD FUNKTIONEN!!!!  ---> skrivautlista(); 
+
+ */

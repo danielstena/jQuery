@@ -6,7 +6,7 @@ body{
     margin: auto;
 
 }
-.header1{
+.header{
     background-color: lightgray;
     position: fixed;
     top:0px;
@@ -15,6 +15,10 @@ body{
     border:1px solid black;
     margin-top:0px;
     font-family: 'Anton', sans-serif;
+    display: flex;
+    justify-content: space-between; 
+    height:100%;
+    margin:auto;
 }
 .header2{
     background-color: lightgray;
@@ -24,12 +28,6 @@ body{
     height:7.5em;  
     border:1px solid black;
     margin-top:0px;
-}
-.allaiheadern{
-    display: flex;
-    justify-content: space-between; 
-    height:100%;
-    margin:auto;
 }
 .main{
     margin-top:10em;
@@ -75,13 +73,16 @@ body{
 .hejString{
     font-size: 8em;
 }
+.besokare{
+    font-size: 1.5em;
+}
 h1{
     padding:0px;
     margin:0px;
 }
 a{
     text-decoration: none;
-    color:black;
+    color:whitesmoke;
     padding:0px;
     margin:0px;
 }
@@ -97,4 +98,7 @@ a{
 }
 button:hover {
     opacity: 0.8;
+}
+ul{
+    list-style: none;
 }
