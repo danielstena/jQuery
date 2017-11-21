@@ -9,8 +9,10 @@ $(document).ready(function(){
 
     //Min function för min array
     function attGoraLista(){
+        var listan = document.createElement("ul");
         for(var i = 0; i < attGoraLista.length; i++) { 
-            document.createElement("ul");
+            var list = document.createElement("li");
+            list.innerText = attGoraLista[i];
         }
     } 
 
@@ -28,29 +30,29 @@ $(document).ready(function(){
         $(".forgott").hide();
     } else {
 
-                $(".welcome").hide();
-                $(".forgott").hide();
-                $(".header2").hide();
-                // Klicka på logga in
-                $(".loggaIn").click(function(){
-                
-                    if (ourUser == $(".userEmail").val() && ourPassword == $(".userPassword").val()) {
-                            // Dölj inlogg Visa hello
-                            sessionStorage.ourUser = $(".userEmail").val();
-                            $(".hejString").append(" Welcome " + $(".userEmail").val() );
-                            $(".array").show();
-                            $(".header1").hide();
-                            $(".header2").show();
-                            $(".forgott").hide();
-                            $(".array").append(attGoraLista);
-                        } else {
-                            console.log("fel ifyllt")
-                            $(".loginForm").hide();
-                            $(".forgott").show();
-                            $(".signout").hide();
+            $(".welcome").hide();
+            $(".forgott").hide();
+            $(".header2").hide();
+            // Klicka på logga in
+            $(".loggaIn").click(function(){
+            
+                if (ourUser == $(".userEmail").val() && ourPassword == $(".userPassword").val()) {
+                        // Dölj inlogg Visa hello
+                        sessionStorage.ourUser = $(".userEmail").val();
+                        $(".hejString").append(" Welcome " + $(".userEmail").val() );
+                        $(".array").show();
+                        $(".header1").hide();
+                        $(".header2").show();
+                        $(".forgott").hide();
+                        $(".array").append(attGoraLista);
+                } else {
+                        console.log("fel ifyllt")
+                        $(".loginForm").hide();
+                        $(".forgott").show();
+                        $(".signout").hide();
                         }
-                });
-    }
+            });
+        }
 
     $(".signoutLink").click(function(){
         sessionStorage.removeItem("ourUser");
